@@ -8,7 +8,6 @@ import connectDB from "./db/dbConnect.js";
 import { config } from "./config.js";
 import authRouter from "./routes/authRouter.js";
 
-import authRouter from "./routes/authRouter.js";
 import userRouter from "./routes/userRouter.js";
 import shortURLRouter from "./routes/shortURLRouter.js";
 
