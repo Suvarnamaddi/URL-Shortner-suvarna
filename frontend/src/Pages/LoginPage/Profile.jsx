@@ -1,37 +1,35 @@
-import React,{use,useEffect,useState} from 'react'
-
+import React, { useEffect, useState } from 'react';
 import Service from '../../utils/http';
-import {Avatar, Text} from '@mantine/core';
-import { Stack, Button } from '@mantine/core';
+import { Avatar, Text, Stack } from '@mantine/core';
+
 const service = new Service();
 
 export default function Profile() { 
-        const[profileData, setProfile] = useState(null);
-        async function getProfile()
-     {
-        let data = await service.get("user/me");
-        setProfile(data);
-        console.log(data);
+  const [profileData, setProfile] = useState(null);
 
-    }
-    useEffect( ()=>{
-        getProfile();
-    },[])
+  async function getProfile() {
+    let data = await service.get("user/me");
+    setProfile(data);
+    console.log(data);
+  }
+
+  useEffect(() => {
+    getProfile();
+  }, []);
+
   return (
-     <Stack
+    <Stack
       h={300}
       bg="var(--mantine-color-body)"
       align="center"
-      justify="center"
-      gap="md"
+      justify="space-between"
+      gap="xl  "
     >
-    <div>
-        
-        <Avatar color="cyan" radius="xl">S</Avatar>
-      <Text tt="capitalize"> {profileData?.email}</Text>
-        <Text tt="uppercase">{profileData?.name}</Text>
-    
-    </div>
+        <center><Avatar src= {profileData?.avatar} size="xl"/></center>
+        <Text><strong>Username:</strong>{profileData?.name}</Text>
+         <center><Text><strong>Email:</strong>{profileData?.email}</Text></center>
+     
+     
     </Stack>
-  )
+  );
 }
