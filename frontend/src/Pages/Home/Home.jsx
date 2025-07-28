@@ -53,8 +53,12 @@ const Home = () => {
               marginTop: "1rem",
             }}
           >
-           Suvarna
+          Smart URL Shortener
           </Title>
+          
+               <Text mb="sm">
+                 Clean..Quick..Reliable..
+               </Text>
 
           <Text
             size="xl"
