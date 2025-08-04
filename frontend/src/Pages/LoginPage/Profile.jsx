@@ -56,8 +56,11 @@ export default function Profile() {
           <Text size="md"><strong>Phone:</strong> {profileData?.phone || 'Not added'}</Text>
           <Text size="md"><strong>Role:</strong> {profileData?.role}</Text>
           <Text size="md"><strong>Joined:</strong> {new Date(profileData?.createdAt).toLocaleDateString()}</Text>
+
         </Stack>
       </div>
     </Center>
+
+    
   );
 }

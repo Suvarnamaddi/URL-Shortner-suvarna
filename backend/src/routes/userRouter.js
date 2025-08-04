@@ -15,3 +15,4 @@ userRouter.get("/me", loggedInUser,  getUserProfile)
 
 
 export default userRouter;
+
